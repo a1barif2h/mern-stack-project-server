@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+var cors = require('cors');
 
 const authHandler = require("./routeHandler/authHandler");
 
@@ -8,6 +9,7 @@ require('dotenv').config();
 // express app initialization
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 const PORT = process.env.PORT;
 const DB_USER = process.env.DB_USER;
