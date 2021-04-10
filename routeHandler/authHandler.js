@@ -8,6 +8,10 @@ const router = express.Router();
 const User = new mongoose.model("USER", authSchema);
 
 
+router.get("/", (req, res) => {
+    res.send("Welcome to Full MERN stack project")
+})
+
 router.post("/register", async (req, res) => {
     try {
         const {name, email, phone, work, password, confirmPassword} = req.body;
